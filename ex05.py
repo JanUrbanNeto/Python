@@ -7,4 +7,8 @@ inss = salario_bruto * 0.08
 ir = salario_bruto * 0.11
 sindicato = salario_bruto *0.05
 salario_liquido = salario_bruto - (inss + ir + sindicato)
-print("esse mes vc ganhou R$ {} de salário bruto, pagou R$ {} ao INSS, R$ {} ao imposto de renda e R$ {} ao sindicato, ficando seu salário líquido R$ {}".format("%.2f" % salario_bruto, "%.2f" % inss, "%.2f" % ir, "%.2f" % sindicato, "%.2f" % salario_liquido))
+print("esse mes vc ganhou R$ {} de salário bruto.".format("%.2f" % salario_bruto))
+print("pagou R$ {} ao INSS.".format("%.2f" % inss))
+print("pagou R$ {} ao imposto de renda.".format("%.2f" % ir))
+print("pagou R$ {} ao sindicato.".format("%.2f" % sindicato))
+print("seu salário líquido R$ {}".format("%.2f" % salario_liquido))
