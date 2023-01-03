@@ -2,8 +2,8 @@ import math
 
 print("Welcome to paint shop of Zé Bonitinho!!!")
 print("How much squaremeters do you need to paint?")
-m2 = input()
-m2 = float(m2)
+m2 = float(input())
+#m2 = float(m2)
 
 if m2 < 0:
     m2 = math.fabs(m2)
