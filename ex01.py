@@ -6,4 +6,4 @@ print("digite sua altura")
 altura = input()
 altura = float(altura)
 imc = peso/altura ** 2
-print("seu IMC é: {}".format("%.2f" % imc))
+print("seu IMC é: {:.2f}".format(imc))
