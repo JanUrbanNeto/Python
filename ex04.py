@@ -18,4 +18,5 @@ elif (m2 >= 3) and (m2 < 54):
 
 else:
     total = math.ceil(m2/54)
-    print("To paint {} m2, you will need {} can of paint with 18 liters each".format(m2, total))
+    print("To paint {} m2, you will need {} can of paint with 18 liters each"
+          .format(m2, total))
