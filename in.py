@@ -2,6 +2,7 @@ import os
 
 
 def is_number(value):
+    """function to check if value is a number"""
     try:
         float(value)
     except ValueError:
@@ -26,4 +27,3 @@ for file in files_list:
         from_path = os.path.join(cwd, file)
         to_path = os.path.join(cwd, file.split('.')[-1], file)
         os.replace(from_path, to_path)
-
