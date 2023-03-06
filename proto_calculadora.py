@@ -35,38 +35,42 @@ while CONTINUAR:
     if is_number(opcao):
         opcao = int(opcao)
 
-        op_string = list(operacoes.keys())[opcao]
+        if opcao < 0 or opcao > 5:
+            print("Escolha Inválida\n")
 
-        if opcao == 5:
-            CONTINUAR = False
-            print("\nSaindo da calculadora\n")
-            break
+        else:
+            op_string = list(operacoes.keys())[opcao]
 
-        print(f"A operação escolhida foi {op_string}\n")
+            if opcao == 5:
+                CONTINUAR = False
+                print("\nSaindo da calculadora\n")
+                break
 
-        print("digite o primeiro valor:")
-        valor1 = float(input())
+            print(f"A operação escolhida foi {op_string}\n")
 
-        print("digite o segundo valor:")
-        valor2 = float(input())
+            print("digite o primeiro valor:")
+            valor1 = float(input())
 
-        if opcao == 0:
-            RESULT = valor1 + valor2
+            print("digite o segundo valor:")
+            valor2 = float(input())
 
-        elif opcao == 1:
-            RESULT = valor1 - valor2
+            if opcao == 0:
+                RESULT = valor1 + valor2
 
-        elif opcao == 2:
-            RESULT = valor1 * valor2
+            elif opcao == 1:
+                RESULT = valor1 - valor2
 
-        elif opcao == 3:
-            RESULT = valor1 / valor2
+            elif opcao == 2:
+                RESULT = valor1 * valor2
 
-        elif opcao == 4:
-            RESULT = valor1 ** valor2
+            elif opcao == 3:
+                RESULT = valor1 / valor2
 
-        print("\nResultado da operação:"
-              f"{valor1} {op_string} {valor2} = {RESULT}\n")
+            elif opcao == 4:
+                RESULT = valor1 ** valor2
+
+            print("\nResultado da operação: "
+                  f"{valor1} {op_string} {valor2} = {RESULT}\n")
 
     else:
         print("Valor inválido! Tente novamente.\n")
