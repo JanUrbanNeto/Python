@@ -1,10 +1,10 @@
 x = 1
-y = 1
+y = 0
 
 try:
     z = x/y
 
-except:
+except ZeroDivisionError:
     print("Erro na Divisão!!")
 
 else:
