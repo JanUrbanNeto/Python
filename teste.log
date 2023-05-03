@@ -1,0 +1,5 @@
+INFO, 2023-05-02 21:58:37,031 - info level
+DEBUG, 2023-05-02 21:58:37,031 - debug level
+WARNING, 2023-05-02 21:58:37,031 - warning level
+ERROR, 2023-05-02 21:58:37,032 - error level
+CRITICAL, 2023-05-02 21:58:37,032 - critical level
