@@ -3,14 +3,12 @@
 
 import os
 
-
 def is_number(value):
     try:
         float(value)
     except ValueError:
         return False
     return True
-
 
 cwd = os.getcwd()
 
