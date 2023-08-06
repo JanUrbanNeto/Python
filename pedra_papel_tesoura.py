@@ -78,7 +78,7 @@ while again == 1:
     print("\n========================================")
     print(f"Sua jogada: {player_move.upper()}")
     print(f"Jogada do Computador: {computer_move.upper()}")
-    
+
     if winner == "p":
         print("Você venceu essa rodada!")
     elif winner == "c":
@@ -86,7 +86,7 @@ while again == 1:
     else:
         print("Empate")
     print("=========================================")
-    
+
     while True:
         print("Jogar novamente? 0 - SIM | 1 NÃO")
         decisao = int(input())
