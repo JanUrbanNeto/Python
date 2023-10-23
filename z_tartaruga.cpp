@@ -1,13 +1,13 @@
 // Definir os pinos dos motores
 #define MOTOR_DIREITO_FRENTE 3
-#define MOTOR1B 4
-#define MOTOR2A 5
-#define MOTOR2B 6
+#define MOTOR_DIREITO_REVERSO 4
+#define MOTOR_ESQUERDO_FRENTE 5
+#define MOTOR_ESQUERDO_REVERSO 6
 
 // Definir os pinos dos sensores
-#define SENSOR1 A0
-#define SENSOR2 A1
-#define SENSOR3 A2
+#define SENSOR_LUMINOSIDADE_FRENTE A0
+#define SENSOR_LUMINOSIDADE_DIREITO A1
+#define SENSOR_LUMINOSIDADE_ESQUERDO A2
 
 // Definir os limiares de luminosidade
 #define LIMIAR1 500
@@ -16,32 +16,32 @@
 // Definir as funções de movimentação dos motores
 void PararMotor1() {
   digitalWrite(MOTOR_DIREITO_FRENTE, LOW);
-  digitalWrite(MOTOR1B, LOW);
+  digitalWrite(MOTOR_DIREITO_REVERSO, LOW);
 }
 
 void FrenteMotor1() {
   digitalWrite(MOTOR_DIREITO_FRENTE, HIGH);
-  digitalWrite(MOTOR1B, LOW);
+  digitalWrite(MOTOR_DIREITO_REVERSO, LOW);
 }
 
 void ReversoMotor1() {
   digitalWrite(MOTOR_DIREITO_FRENTE, LOW);
-  digitalWrite(MOTOR1B, HIGH);
+  digitalWrite(MOTOR_DIREITO_REVERSO, HIGH);
 }
 
 void PararMotor2() {
-  digitalWrite(MOTOR2A, LOW);
-  digitalWrite(MOTOR2B, LOW);
+  digitalWrite(MOTOR_ESQUERDO_FRENTE, LOW);
+  digitalWrite(MOTOR_ESQUERDO_REVERSO, LOW);
 }
 
 void FrenteMotor2() {
-  digitalWrite(MOTOR2A, HIGH);
-  digitalWrite(MOTOR2B, LOW);
+  digitalWrite(MOTOR_ESQUERDO_FRENTE, HIGH);
+  digitalWrite(MOTOR_ESQUERDO_REVERSO, LOW);
 }
 
 void ReversoMotor2() {
-  digitalWrite(MOTOR2A, LOW);
-  digitalWrite(MOTOR2B, HIGH);
+  digitalWrite(MOTOR_ESQUERDO_FRENTE, LOW);
+  digitalWrite(MOTOR_ESQUERDO_REVERSO, HIGH);
 }
 
 // Inicializar as variáveis globais
@@ -50,14 +50,14 @@ int valor1, valor2, valor3; // Valores dos sensores
 void setup() {
   // Configurar os pinos dos motores como saída
   pinMode(MOTOR_DIREITO_FRENTE, OUTPUT);
-  pinMode(MOTOR1B, OUTPUT);
-  pinMode(MOTOR2A, OUTPUT);
-  pinMode(MOTOR2B, OUTPUT);
+  pinMode(MOTOR_DIREITO_REVERSO, OUTPUT);
+  pinMode(MOTOR_ESQUERDO_FRENTE, OUTPUT);
+  pinMode(MOTOR_ESQUERDO_REVERSO, OUTPUT);
 
   // Configurar os pinos dos sensores como entrada
-  pinMode(SENSOR1, INPUT);
-  pinMode(SENSOR2, INPUT);
-  pinMode(SENSOR3, INPUT);
+  pinMode(SENSOR_LUMINOSIDADE_FRENTE, INPUT);
+  pinMode(SENSOR_LUMINOSIDADE_DIREITO, INPUT);
+  pinMode(SENSO_LUMINOSIDADE_ESQUERDO3, INPUT);
 
   // Parar os motores inicialmente
   PararMotor1();
@@ -66,9 +66,9 @@ void setup() {
 
 void loop() {
   // Ler os valores dos sensores
-  valor1 = analogRead(SENSOR1);
-  valor2 = analogRead(SENSOR2);
-  valor3 = analogRead(SENSOR3);
+  valor1 = analogRead(SENSOR_LUMINOSIDADE_FRENTE);
+  valor2 = analogRead(SENSOR_LUMINOSIDADE_DIREITO);
+  valor3 = analogRead(SENSO_LUMINOSIDADE_ESQUERDO3);
 
   // Se nenhum sensor detectar luz suficiente, parar os motores
   if (valor1 < LIMIAR1 && valor2 < LIMIAR1 && valor3 < LIMIAR1) {
@@ -93,5 +93,4 @@ void loop() {
     FrenteMotor1();
     FrenteMotor2();
   }
-
 }
