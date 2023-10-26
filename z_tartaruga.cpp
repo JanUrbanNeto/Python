@@ -13,37 +13,6 @@
 #define LIMIAR1 500
 #define LIMIAR2 700
 
-// Definir as funções de movimentação dos motores
-void PararMotor1() {
-  digitalWrite(MOTOR_DIREITO_FRENTE, LOW);
-  digitalWrite(MOTOR_DIREITO_REVERSO, LOW);
-}
-
-void FrenteMotor1() {
-  digitalWrite(MOTOR_DIREITO_FRENTE, HIGH);
-  digitalWrite(MOTOR_DIREITO_REVERSO, LOW);
-}
-
-void ReversoMotor1() {
-  digitalWrite(MOTOR_DIREITO_FRENTE, LOW);
-  digitalWrite(MOTOR_DIREITO_REVERSO, HIGH);
-}
-
-void PararMotor2() {
-  digitalWrite(MOTOR_ESQUERDO_FRENTE, LOW);
-  digitalWrite(MOTOR_ESQUERDO_REVERSO, LOW);
-}
-
-void FrenteMotor2() {
-  digitalWrite(MOTOR_ESQUERDO_FRENTE, HIGH);
-  digitalWrite(MOTOR_ESQUERDO_REVERSO, LOW);
-}
-
-void ReversoMotor2() {
-  digitalWrite(MOTOR_ESQUERDO_FRENTE, LOW);
-  digitalWrite(MOTOR_ESQUERDO_REVERSO, HIGH);
-}
-
 // Inicializar as variáveis globais
 int valor1, valor2, valor3; // Valores dos sensores
 
@@ -65,11 +34,7 @@ void setup() {
 }
 
 void loop() {
-  // Ler os valores dos sensores
-  valor1 = analogRead(SENSOR_LUMINOSIDADE_FRENTE);
-  valor2 = analogRead(SENSOR_LUMINOSIDADE_DIREITO);
-  valor3 = analogRead(SENSO_LUMINOSIDADE_ESQUERDO3);
-
+  
   // Se nenhum sensor detectar luz suficiente, parar os motores
   if (valor1 < LIMIAR1 && valor2 < LIMIAR1 && valor3 < LIMIAR1) {
     PararMotor1();
