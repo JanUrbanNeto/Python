@@ -9,7 +9,7 @@ def fibonacci():
     c = 0
     seqfibonacci.append(a)
     seqfibonacci.append(b)
-    for index in range(qtde - 2):
+    for i in range(qtde - 2):
         c = a + b
         a = b
         b = c
